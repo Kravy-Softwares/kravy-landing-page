@@ -1,17 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { GradientText } from "../GradientTextButton/GradientText";
-import PricingSection from "./Pricing";
-import Faqs from "./Faqs";
+import React from "react";
 import Testimonials from "./Reviews";
-import WhyChooseUs from "./whyChooseUs";
-import AboutPlatform from "./AboutThisPlatform";
-
-import OutletCompare from "./OutletCompare";
-import MasonryGallery from "../galllery";
-import ZomatoApproved from "./ZomatoApproved";
-import InstagramReels from "./InstagramReels";
 import AppDownload from "./AppDownload";
 import Hero from "./Hero";
 import FeaturesGrid from "@/components/global/Home/Feature";
@@ -77,16 +66,6 @@ export default function Home() {
           },
         ]}
       />
-
-      {/* <MasonryGallery /> */}
-
-      {/* <InstagramReels />
-      <ZomatoApproved />
-      <OutletCompare />
-      <WhyChooseUs />
-      <PricingSection />
-      <AboutPlatform />
-      <Testimonials /> */}
       <AppDownload />
     </div>
   );

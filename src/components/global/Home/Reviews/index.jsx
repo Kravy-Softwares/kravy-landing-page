@@ -1,8 +1,7 @@
 "use client";
-
-import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import SectionWrapper from "@/components/global/SectionWrapper";
 
 const testimonials = [
   {
@@ -43,55 +42,49 @@ const cardVariants = {
 
 export default function Testimonials() {
   return (
-    <section className="mt-20 px-4 md:px-0 max-w-6xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-black text-neutral-800 dark:text-white tracking-tight">
-          Trust by 100+ Leading Outlets 🚀
-        </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 mt-2 font-medium">
-          See how Kravy Billing is powering modern food businesses.
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-6">
-        {testimonials.map((t, i) => (
-          <motion.div
-            key={i}
-            custom={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={cardVariants}
-            className="rounded-2xl border border-neutral-200 dark:border-neutral-700 p-4 md:p-8 backdrop-blur-lg shadow-lg dark:shadow-black/20 bg-white/60 dark:bg-[#10101a]/70 transition-colors"
-          >
-            <div className="flex items-center gap-1 text-yellow-500 mb-3">
-              {[...Array(5)].map((_, idx) => (
-                <Star key={idx} size={16} fill="currentColor" />
-              ))}
-            </div>
-            <p className="text-neutral-800 dark:text-neutral-200 text-sm leading-relaxed mb-6 italic">
-              “{t.quote}”
-            </p>
-            <div className="flex items-center gap-3">
-              <img
-                src={t.img}
-                alt={t.name}
-                width={40}
-                height={40}
-                className="rounded-full object-cover border border-neutral-300 dark:border-neutral-600"
-              />
-              <div>
-                <div className="text-sm font-semibold text-neutral-800 dark:text-white">
-                  {t.name}
-                </div>
-                <div className="text-xs text-neutral-500 dark:text-neutral-400">
-                  {t.title}
+    <div>
+      <SectionWrapper
+        title="Trust by 100+ Leading Outlets 🚀"
+        description="See how Kravy Billing is powering modern food businesses."
+      >
+        <div className="grid md:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={cardVariants}
+              className="rounded-2xl border border-neutral-200 dark:border-neutral-700 p-4 md:p-8 backdrop-blur-lg shadow-lg dark:shadow-black/20 bg-white/60 dark:bg-[#10101a]/70 transition-colors"
+            >
+              <div className="flex items-center gap-1 text-yellow-500 mb-3">
+                {[...Array(5)].map((_, idx) => (
+                  <Star key={idx} size={16} fill="currentColor" />
+                ))}
+              </div>
+              <p className="text-neutral-800 dark:text-neutral-200 text-sm leading-relaxed mb-6 italic">
+                “{t.quote}”
+              </p>
+              <div className="flex items-center gap-3">
+                <img
+                  src={t.img}
+                  alt={t.name}
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover border border-neutral-300 dark:border-neutral-600"
+                />
+                <div>
+                  <div className="text-sm font-semibold text-neutral-800 dark:text-white">
+                    {t.name}
+                  </div>
+                  <div className="text-xs text-neutral-500 dark:text-neutral-400">{t.title}</div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+            </motion.div>
+          ))}
+        </div>{" "}
+      </SectionWrapper>
+    </div>
   );
 }

@@ -3,51 +3,25 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, Sparkles, ShieldCheck } from "lucide-react";
+import SectionWrapper from "@/components/global/SectionWrapper";
 
 export default function BillFeatureShowcase({ billImage, hotspots }) {
   const [active, setActive] = useState(null);
 
   return (
-    <section className="relative overflow-hidden py-24">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50 to-white" />
-
-      <div className="absolute left-0 top-40 h-96 w-96 rounded-full bg-indigo-500/10 blur-[140px]" />
-      <div className="absolute right-0 bottom-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-[140px]" />
-
+    <SectionWrapper
+      title="Every Receipt Works For Your Business"
+      description="Customer details, loyalty points, UPI payments, feedback collection, branding and analytics — all packed inside a single receipt."
+    >
       <div className="relative mx-auto max-w-7xl px-4">
-        {/* Header */}
-        <div className="mx-auto mb-20 max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-medium shadow-sm">
-            <Sparkles className="h-4 w-4" />
-            Smart Receipt System
-          </div>
-
-          <h2 className="mt-6 text-4xl font-black tracking-tight text-neutral-900 md:text-6xl">
-            Every Receipt Works
-            <br />
-            For Your Business
-          </h2>
-
-          <p className="mt-6 text-lg text-neutral-600">
-            Customer details, loyalty points, UPI payments, feedback collection, branding and
-            analytics — all packed inside a single receipt.
-          </p>
-        </div>
-
-        {/* Desktop Layout */}
         <div className="relative hidden min-h-[850px] lg:block">
-          {/* Bill */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="absolute left-1/2 top-0 z-20 w-[420px] -translate-x-1/2"
           >
             <div className="relative">
-              {/* Glow */}
               <div className="absolute inset-0 rounded-[40px] bg-gradient-to-r from-indigo-500/20 to-emerald-500/20 blur-3xl" />
-
-              {/* Receipt */}
               <div className="relative overflow-hidden rounded-[32px] border border-neutral-200 bg-white p-3 shadow-[0_40px_100px_rgba(0,0,0,0.12)]">
                 <img src={billImage} alt="Receipt" className="w-full rounded-2xl" />
 
@@ -76,7 +50,6 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
             </div>
           </motion.div>
 
-          {/* Feature Cards */}
           {hotspots.map((spot, index) => {
             const leftSide = spot.side === "left";
 
@@ -111,7 +84,6 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
                   </div>
                 </div>
 
-                {/* Connector Line */}
                 <div
                   className={`absolute top-1/2 h-[2px] bg-gradient-to-r from-indigo-500 to-indigo-300 ${
                     leftSide ? "right-[-120px] w-[120px]" : "left-[-120px] w-[120px]"
@@ -122,7 +94,6 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
           })}
         </div>
 
-        {/* Mobile */}
         <div className="lg:hidden">
           <div className="overflow-hidden rounded-[28px] border bg-white p-3 shadow-xl">
             <img src={billImage} alt="Receipt" className="w-full rounded-2xl" />
@@ -139,6 +110,6 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
-import { QrCode, Smartphone, Star, BellRing, ShieldCheck, Users } from "lucide-react";
+import { QrCode, Smartphone, Star, BellRing, ShieldCheck, Users, SearchX } from "lucide-react";
 import React from "react";
 import FeatureCard from "./Card";
+import SectionWrapper from "@/components/global/SectionWrapper";
 
 export const FEATURES = [
   {
@@ -51,22 +52,11 @@ export const FEATURES = [
 
 export default function FeaturesGrid() {
   return (
-    <section
-      className="w-full bg-gradient-to-b
-            from-zinc-50
-            to-white py-24"
-    >
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-16 text-center">
-          <h2 className="mt-6 text-5xl font-bold tracking-tight">
-            Everything your restaurant needs
-          </h2>
-
-          <p className="mt-4 text-lg text-zinc-500 max-w-2xl mx-auto">
-            Manage orders, payments, customer engagement and analytics from one powerful platform.
-          </p>
-        </div>
-
+    <div>
+      <SectionWrapper
+        title="Everything your Restaurant needs."
+        description="Manage orders, payments, customer engagement and analytics from one powerful platform."
+      >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((feature) => (
             <div key={feature.id} className={feature.size === "large" ? "md:col-span-2" : ""}>
@@ -74,7 +64,32 @@ export default function FeaturesGrid() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </SectionWrapper>
+    </div>
+    // <section
+    //   className="w-full bg-gradient-to-b
+    //         from-zinc-50
+    //         to-white py-24"
+    // >
+    //   <div className="mx-auto max-w-7xl px-4">
+    //     <div className="mb-16 text-center">
+    //       <h2 className="mt-6 text-5xl font-bold tracking-tight">
+    //         Everything your restaurant needs
+    //       </h2>
+
+    //       <p className="mt-4 text-lg text-zinc-500 max-w-2xl mx-auto">
+    //         Manage orders, payments, customer engagement and analytics from one powerful platform.
+    //       </p>
+    //     </div>
+
+    // <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    //   {FEATURES.map((feature) => (
+    //     <div key={feature.id} className={feature.size === "large" ? "md:col-span-2" : ""}>
+    //       <FeatureCard {...feature} />
+    //     </div>
+    //   ))}
+    // </div>
+    //   </div>
+    // </section>
   );
 }
