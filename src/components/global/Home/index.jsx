@@ -15,15 +15,70 @@ import InstagramReels from "./InstagramReels";
 import AppDownload from "./AppDownload";
 import Hero from "./Hero";
 import HowItWorks from "@/components/pages/qr-menu/HowItWorks";
+import FeaturesGrid from "@/components/global/Home/Feature";
+import BillFeatureShowcase from "@/components/global/Home/Feature/BillFeatureShowCase";
 
 export default function Home() {
-  const [showForm, setShowForm] = useState(false);
-
   return (
     <div className="w-full text-neutral-900 dark:text-white transition-colors duration-300">
       <Hero />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
+      <FeaturesGrid />
       <Testimonials />
+
+      <BillFeatureShowcase
+        billImage="/assets/home/bill.jpeg"
+        hotspots={[
+          {
+            id: "logo",
+            title: "Restaurant Branding",
+            description: "Your logo appears on every receipt.",
+            x: 50,
+            y: 12,
+            side: "left",
+          },
+          {
+            id: "customer",
+            title: "Customer Details",
+            description: "Capture customer name and phone.",
+            x: 50,
+            y: 25,
+            side: "right",
+          },
+          {
+            id: "token",
+            title: "Token Number",
+            description: "Faster pickup and table management.",
+            x: 50,
+            y: 38,
+            side: "left",
+          },
+          {
+            id: "items",
+            title: "Purchased Items",
+            description: "Detailed order summary.",
+            x: 50,
+            y: 55,
+            side: "right",
+          },
+          {
+            id: "upi",
+            title: "UPI QR Payment",
+            description: "Instant digital payments.",
+            x: 50,
+            y: 78,
+            side: "left",
+          },
+          {
+            id: "feedback",
+            title: "Feedback QR",
+            description: "Collect customer reviews.",
+            x: 50,
+            y: 90,
+            side: "right",
+          },
+        ]}
+      />
 
       {/* <MasonryGallery /> */}
 
@@ -34,7 +89,7 @@ export default function Home() {
       <PricingSection />
       <AboutPlatform />
       <Testimonials /> */}
-      {/* <AppDownload /> */}
+      <AppDownload />
     </div>
   );
 }
