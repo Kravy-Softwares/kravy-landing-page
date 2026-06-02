@@ -13,7 +13,8 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
       title="Every Receipt Works For Your Business"
       description="Customer details, loyalty points, UPI payments, feedback collection, branding and analytics — all packed inside a single receipt."
     >
-      <div className="relative mx-auto max-w-7xl">
+      <img src="/assets/image.png"/>
+      {/* <div className="relative mx-auto max-w-7xl">
         <div className="relative hidden min-h-[1100px] lg:block">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -109,7 +110,7 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </SectionWrapper>
   );
 }
