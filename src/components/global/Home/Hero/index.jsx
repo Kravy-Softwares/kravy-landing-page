@@ -1,90 +1,117 @@
 "use client";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { HERO_VIDEO_URL } from "@/constants/pages/home";
-import { GradientText } from "../../GradientTextButton/GradientText";
-import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
-const Hero = () => {
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { GradientText } from "../../GradientTextButton/GradientText";
+
+const features = ["Smart Billing", "QR Ordering", "Inventory", "Analytics"];
+
+export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="relative flex max-w-7xl flex-col items-center justify-center pt-16 px-6 pb-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
-        >
-          <GradientText />
-        </motion.div>
-        <motion.h1
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="
-    mx-auto
-    max-w-5xl
-    text-center
-    text-[2.4rem]
-    font-black
-    leading-[1.05]
-    tracking-[-0.03em]
-    text-gray-900
-    sm:text-5xl
-    md:text-6xl
-    lg:text-7xl
-    dark:text-white
-  "
-        >
-          Take Orders. Create Bills.
-          <br />
-          <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-            Grow Faster.
-          </span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="mt-8 max-w-6xl text-lg leading-relaxed text-gray-600 dark:text-gray-300 text-sm md:text-xl"
-        >
-          Manage billing, orders, sales reports, inventory, and customer relationships from one
-          powerful Tool
-        </motion.p>
+      <div className="absolute inset-0 bg-gradient-to-b from-green-50 via-white to-white dark:from-green-950/10 dark:via-background dark:to-background" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
-          <a
-            href="#features"
-            className="rounded-2xl border border-gray-300 bg-white px-8 py-4 font-medium text-gray-900 transition-all duration-300 hover:bg-gray-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
-          >
-            Explore Features
-          </a>
-          <Link
-            href={`${process.env.NEXT_KRAVY_BILLING_APP_BASE_URL}`}
-            target="_blank"
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-          >
-            <span className="relative z-10">Start Free Trial →</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </Link>
-        </motion.div>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="order-2 lg:order-1 text-left">
+            {/* <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="mb-4 flex justify-start"
+            >
+              <GradientText />
+            </motion.div> */}
 
-        <div className="mt-12 md:mt-20">
-          <HeroVideoDialog
-            animationStyle="from-center"
-            videoSrc={HERO_VIDEO_URL}
-            thumbnailSrc="https://i.pinimg.com/1200x/94/a0/1c/94a01cef887d3067022d4f93d7e6e3a7.jpg"
-            thumbnailAlt="Hero Video"
-          />
+            <motion.h1
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-3xl text-4xl font-black leading-[1.05] tracking-[-0.04em] text-gray-900 sm:text-5xl md:text-6xl xl:text-7xl dark:text-white"
+            >
+              Take Orders.
+              <br />
+              Create Bills.
+              <br />
+              <span className="bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">
+                Grow Faster.
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mt-5 max-w-xl text-base leading-relaxed text-gray-600 md:text-lg dark:text-gray-300"
+            >
+              Everything your business needs to manage billing, inventory, QR ordering and sales
+              reporting from one modern platform.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="mt-8 flex flex-col gap-3 sm:flex-row"
+            >
+              <Link
+                href={`${process.env.NEXT_KRAVY_BILLING_APP_BASE_URL}`}
+                target="_blank"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3.5 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-700"
+              >
+                Start Free Trial
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+
+              <a
+                href="#features"
+                className="inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-6 py-3.5 font-medium text-gray-900 transition-all hover:border-green-300 hover:bg-green-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white"
+              >
+                Explore Features
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mt-8 flex flex-wrap gap-3"
+            >
+              {features.map((feature) => (
+                <div
+                  key={feature}
+                  className="inline-flex items-center gap-2 rounded-full border border-green-100 bg-green-50 px-3 py-2 text-sm font-medium text-green-700 dark:border-green-900/40 dark:bg-green-950/20 dark:text-green-400"
+                >
+                  <CheckCircle2 className="h-4 w-4" />
+                  {feature}
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, x: 30 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-[650px]">
+              <div className="absolute inset-0 rounded-full bg-green-500/10 blur-3xl" />
+
+              <Image
+                src="/assets/home/hero-phone.png"
+                alt="Kravy POS Dashboard"
+                width={1000}
+                height={1000}
+                priority
+                className="relative z-10 w-full h-auto drop-shadow-[0_20px_60px_rgba(34,197,94,0.15)]"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
