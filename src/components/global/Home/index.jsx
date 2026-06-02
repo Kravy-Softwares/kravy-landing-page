@@ -14,7 +14,6 @@ import ZomatoApproved from "./ZomatoApproved";
 import InstagramReels from "./InstagramReels";
 import AppDownload from "./AppDownload";
 import Hero from "./Hero";
-import HowItWorks from "@/components/pages/qr-menu/HowItWorks";
 import FeaturesGrid from "@/components/global/Home/Feature";
 import BillFeatureShowcase from "@/components/global/Home/Feature/BillFeatureShowCase";
 
@@ -22,7 +21,6 @@ export default function Home() {
   return (
     <div className="w-full text-neutral-900 dark:text-white transition-colors duration-300">
       <Hero />
-      {/* <HowItWorks /> */}
       <FeaturesGrid />
       <Testimonials />
 
