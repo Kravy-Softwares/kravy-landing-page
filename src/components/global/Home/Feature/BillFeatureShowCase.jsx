@@ -14,7 +14,7 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
       description="Customer details, loyalty points, UPI payments, feedback collection, branding and analytics — all packed inside a single receipt."
     >
       <div className="relative mx-auto max-w-7xl">
-        <div className="relative hidden min-h-[850px] lg:block">
+        <div className="relative hidden min-h-[1100px] lg:block">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

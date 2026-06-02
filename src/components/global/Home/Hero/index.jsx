@@ -7,7 +7,7 @@ import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
 const Hero = () => {
   return (
-    <section className="relative bg-grid overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="relative flex max-w-7xl flex-col items-center justify-center pt-16 px-6 pb-10 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -17,12 +17,24 @@ const Hero = () => {
         >
           <GradientText />
         </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="max-w-6xl font-black leading-[1.05] tracking-tight text-gray-900 dark:text-white text-4xl md:text-7xl"
+          className="
+    mx-auto
+    max-w-5xl
+    text-center
+    text-[2.4rem]
+    font-black
+    leading-[1.05]
+    tracking-[-0.03em]
+    text-gray-900
+    sm:text-5xl
+    md:text-6xl
+    lg:text-7xl
+    dark:text-white
+  "
         >
           Take Orders. Create Bills.
           <br />
@@ -30,7 +42,6 @@ const Hero = () => {
             Grow Faster.
           </span>
         </motion.h1>
-
         <motion.p
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
