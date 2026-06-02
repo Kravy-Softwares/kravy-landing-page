@@ -9,12 +9,9 @@ const features = ["QR Ordering", "Billing", "Inventory"];
 
 export default function AppDownload() {
   return (
-    <section className="pt-14  bg-white overflow-hidden">
-      <div className="mx-auto px-4 md:px-6 lg:px-8">
+    <section className="pt-14 bg-white overflow-hidden">
+      <div className="mx-auto">
         <div className="relative overflow-hidden rounded-3xl lg:rounded-[32px] border border-neutral-200 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:42px_42px]" />
-          <div className="absolute left-1/2 top-0 h-[250px] w-[250px] md:h-[350px] md:w-[350px] -translate-x-1/2 rounded-full bg-green-500/10 blur-[120px]" />
-
           <div className="relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-6 items-center p-5 sm:p-6 md:p-10 lg:p-12">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -98,9 +95,7 @@ export default function AppDownload() {
                 </div>
 
                 <div className="relative w-[240px] xs:w-[260px] sm:w-[300px] md:w-[340px]">
-                  <div className="rounded-[34px] md:rounded-[40px] bg-neutral-900 p-3 shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
-                    <div className="absolute left-1/2 top-4 z-20 h-5 md:h-6 w-24 md:w-28 -translate-x-1/2 rounded-full bg-black" />
-
+                  <div className="rounded-[34px] md:rounded-[40px] bg-neutral-900 p-3">
                     <div className="overflow-hidden rounded-[28px] md:rounded-[32px] bg-white min-h-[360px] sm:min-h-[430px]">
                       <div className="flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-10 text-center">
                         <div className="rounded-full bg-green-100 px-3 py-1.5 text-[10px] sm:text-xs font-semibold text-green-700">

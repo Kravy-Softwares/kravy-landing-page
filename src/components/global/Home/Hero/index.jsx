@@ -8,7 +8,7 @@ import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 const Hero = () => {
   return (
     <section className="relative bg-grid overflow-hidden">
-      <div className="relative flex max-w-7xl flex-col items-center justify-center pt-16 px-6 pb-20 text-center">
+      <div className="relative flex max-w-7xl flex-col items-center justify-center pt-16 px-6 pb-10 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
