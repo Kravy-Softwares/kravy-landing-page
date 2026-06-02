@@ -11,30 +11,27 @@ const features = ["Smart Billing", "QR Ordering", "Inventory", "Analytics"];
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-green-50 via-white to-white dark:from-green-950/10 dark:via-background dark:to-background" />
+      <div className="absolute" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div className="order-2 lg:order-1 text-left">
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="mb-4 flex justify-start"
+              className="mb-4 flex items-left justify-center lg:justify-start"
             >
               <GradientText />
-            </motion.div> */}
+            </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="max-w-3xl text-4xl font-black leading-[1.05] tracking-[-0.04em] text-gray-900 sm:text-5xl md:text-6xl xl:text-7xl dark:text-white"
+              className="max-w-3xl text-center lg:text-start text-4xl font-black leading-[1.05] tracking-[-0.04em] text-gray-900 sm:text-4xl md:text-5xl xl:text-6xl dark:text-white"
             >
-              Take Orders.
-              <br />
-              Create Bills.
-              <br />
+              Take Orders. Create Bills.{" "}
               <span className="bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">
                 Grow Faster.
               </span>
@@ -44,7 +41,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mt-5 max-w-xl text-base leading-relaxed text-gray-600 md:text-lg dark:text-gray-300"
+              className="mt-5 text-sm max-w-xl text-base leading-relaxed text-gray-600 md:text-lg text-center lg:text-start dark:text-gray-300"
             >
               Everything your business needs to manage billing, inventory, QR ordering and sales
               reporting from one modern platform.
@@ -77,7 +74,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="mt-8 flex flex-wrap gap-3"
+              className="mt-8 flex justify-center lg:justify-start flex-wrap gap-3"
             >
               {features.map((feature) => (
                 <div
