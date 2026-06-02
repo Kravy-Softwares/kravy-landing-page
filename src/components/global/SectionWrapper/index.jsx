@@ -1,6 +1,6 @@
 export default function SectionWrapper({ title = "", description = "", children }) {
   return (
-    <section className="mt-20 px-2 max-w-6xl mx-auto">
+    <section className="mt-10 px-2 max-w-6xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-black text-neutral-800 dark:text-white tracking-tight">
           {title}

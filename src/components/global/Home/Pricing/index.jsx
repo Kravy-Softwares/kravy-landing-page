@@ -3,13 +3,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { useRouter } from "next/navigation";
-
-
-export const metadata = {
-title: "Pricing | Kravy Billing Software",
-description: "Affordable POS billing software for restaurants and shops.",
-};
 
 export const plans = [
   {
@@ -29,7 +22,6 @@ export const plans = [
       "Chat support",
     ],
   },
-
   {
     key: "year1",
     name: "1 Year Plan",
@@ -49,7 +41,6 @@ export const plans = [
       "Chat & Email support",
     ],
   },
-
   {
     key: "year2",
     name: "2 Year Plan",
@@ -69,7 +60,6 @@ export const plans = [
       "Chat & Email support",
     ],
   },
-
   {
     key: "year3",
     name: "3 Year Plan",
@@ -93,28 +83,20 @@ export const plans = [
 ];
 
 export default function PricingSection() {
-  const router = useRouter();
-  const { addToCart, cartItems, removeFromCart, setIsCartOpen } = useCart();
+  const { addToCart, setIsCartOpen } = useCart();
 
   const handlePlanSelect = (plan) => {
-    // The plan keys mapping is already handled by CartContext's addToCart logic
-    // but we can ensure consistency here if needed.
-    
-    // add selected plan
     addToCart({
       id: plan.key,
       name: plan.name,
       price: plan.price,
     });
-
-    // open the cart sidebar
     setIsCartOpen(true);
   };
 
   return (
     <section id="pricing" className="px-6 py-20 text-center">
-
-      <h2 className="text-4xl font-black mb-4 dark:text-white tracking-tight">
+      <h2 className="text-4xl font-black mb-4 text-neutral-900 dark:text-white tracking-tight">
         Choose Your Plan
       </h2>
 
@@ -123,67 +105,54 @@ export default function PricingSection() {
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-
         {plans.map((plan) => {
+          const saving = plan.originalPrice && plan.originalPrice - plan.price;
 
-          const saving =
-            plan.originalPrice && plan.originalPrice - plan.price;
-
-          const savePercent =
-            plan.originalPrice &&
-            Math.round((saving / plan.originalPrice) * 100);
+          const savePercent = plan.originalPrice && Math.round((saving / plan.originalPrice) * 100);
 
           return (
             <motion.div
               key={plan.key}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -6 }}
               className={`relative flex flex-col rounded-[2.5rem] p-8 border transition-all duration-300 shadow-sm
               ${
                 plan.highlight
-                  ? "bg-gradient-to-br from-indigo-600 to-indigo-800 text-white border-none shadow-xl shadow-indigo-500/20"
+                  ? "bg-primary-600 text-white border-primary-600 shadow-xl shadow-primary-500/20"
                   : "bg-white dark:bg-zinc-900 border-neutral-200 dark:border-white/5"
               }`}
             >
-
               {plan.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-3 py-1 rounded-full">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary-700 text-white text-xs px-3 py-1 rounded-full">
                   Best Value
                 </span>
               )}
 
               {savePercent && (
-                <div className="text-xs font-semibold text-green-500 mb-2">
+                <div className="text-xs font-semibold text-primary-600 mb-2">
                   Save {savePercent}%
                 </div>
               )}
 
-              <h3 className="text-xl font-semibold">
-                {plan.name}
-              </h3>
+              <h3 className="text-xl font-semibold">{plan.name}</h3>
 
               <div className="mt-2 mb-3">
-
                 {plan.originalPrice && (
-                  <div className="text-sm line-through opacity-70">
-                    ₹{plan.originalPrice}
-                  </div>
+                  <div className="text-sm line-through opacity-70">₹{plan.originalPrice}</div>
                 )}
-
-                <div className="text-4xl font-bold">
-                  ₹{plan.price}
-                </div>
-
+                <div className="text-4xl font-bold">₹{plan.price}</div>
               </div>
 
-              <p className="text-sm opacity-80 mb-6">
-                {plan.description}
-              </p>
+              <p className="text-sm opacity-80 mb-6">{plan.description}</p>
 
               <ul className="space-y-3 text-left text-sm mb-6">
                 {plan.features.map((f, i) => (
-                  <li key={i} className="flex gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-400" />
-                    {f}
+                  <li key={i} className="flex gap-2 items-start">
+                    <CheckCircle2
+                      className={`w-5 h-5 mt-[2px] ${
+                        plan.highlight ? "text-white" : "text-primary-600"
+                      }`}
+                    />
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -193,14 +162,13 @@ export default function PricingSection() {
                 className={`mt-auto py-4 rounded-2xl font-black text-sm uppercase tracking-widest flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]
                 ${
                   plan.highlight
-                    ? "bg-white text-black"
-                    : "bg-neutral-900 dark:bg-white/10 text-white"
+                    ? "bg-white text-primary-600"
+                    : "bg-primary-600 text-white hover:bg-primary-700"
                 }`}
               >
                 Select Plan
                 <ArrowRight className="w-4 h-4" />
               </button>
-
             </motion.div>
           );
         })}

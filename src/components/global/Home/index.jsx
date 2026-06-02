@@ -4,6 +4,7 @@ import Testimonials from "./Reviews";
 import AppDownload from "./AppDownload";
 import Hero from "./Hero";
 import FeaturesGrid from "@/components/global/Home/Feature";
+import PricingSection from "@/components/global/Home/Pricing";
 import BillFeatureShowcase from "@/components/global/Home/Feature/BillFeatureShowCase";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <FeaturesGrid />
       <Testimonials />
+      <PricingSection />
 
       <BillFeatureShowcase
         billImage="/assets/home/bill.jpeg"

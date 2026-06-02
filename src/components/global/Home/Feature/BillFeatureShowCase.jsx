@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronRight, Sparkles, ShieldCheck } from "lucide-react";
+import { ChevronRight, ShieldCheck } from "lucide-react";
 import SectionWrapper from "@/components/global/SectionWrapper";
 
 export default function BillFeatureShowcase({ billImage, hotspots }) {
@@ -21,7 +21,8 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
             className="absolute left-1/2 top-0 z-20 w-[420px] -translate-x-1/2"
           >
             <div className="relative">
-              <div className="absolute inset-0 rounded-[40px] bg-gradient-to-r from-indigo-500/20 to-emerald-500/20 blur-3xl" />
+              <div className="absolute inset-0 rounded-[40px] bg-primary-500/10 blur-3xl" />
+
               <div className="relative overflow-hidden rounded-[32px] border border-neutral-200 bg-white p-3 shadow-[0_40px_100px_rgba(0,0,0,0.12)]">
                 <img src={billImage} alt="Receipt" className="w-full rounded-2xl" />
 
@@ -38,10 +39,10 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
                     }}
                   >
                     <div className="relative">
-                      <div className="absolute -inset-4 rounded-full bg-indigo-500/20 blur-xl" />
+                      <div className="absolute -inset-4 rounded-full bg-primary-500/20 blur-xl" />
 
-                      <div className="relative h-4 w-4 rounded-full bg-indigo-600 ring-4 ring-indigo-100">
-                        <span className="absolute inset-0 animate-ping rounded-full bg-indigo-500" />
+                      <div className="relative h-4 w-4 rounded-full bg-primary-600 ring-4 ring-primary-100">
+                        <span className="absolute inset-0 animate-ping rounded-full bg-primary-500" />
                       </div>
                     </div>
                   </motion.div>
@@ -68,8 +69,8 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
               >
                 <div className="group rounded-3xl border border-neutral-200 bg-white/90 p-5 backdrop-blur shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-50">
-                      <ShieldCheck className="h-5 w-5 text-indigo-600" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50">
+                      <ShieldCheck className="h-5 w-5 text-primary-600" />
                     </div>
 
                     <div className="flex-1">
@@ -85,7 +86,7 @@ export default function BillFeatureShowcase({ billImage, hotspots }) {
                 </div>
 
                 <div
-                  className={`absolute top-1/2 h-[2px] bg-gradient-to-r from-indigo-500 to-indigo-300 ${
+                  className={`absolute top-1/2 h-[2px] bg-primary-500/40 ${
                     leftSide ? "right-[-120px] w-[120px]" : "left-[-120px] w-[120px]"
                   }`}
                 />
