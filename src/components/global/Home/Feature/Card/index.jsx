@@ -56,7 +56,7 @@ export default function FeatureCard({ title, description, image, badge, children
         <div
           className="
             overflow-hidden
-            rounded-[24px]
+            rounded-[12px]
             border border-zinc-200
             bg-gradient-to-b
             from-zinc-50
@@ -65,7 +65,7 @@ export default function FeatureCard({ title, description, image, badge, children
             flex
             items-center
             justify-center
-            p-6
+            p-2
           "
         >
           {image ? (
@@ -74,7 +74,7 @@ export default function FeatureCard({ title, description, image, badge, children
               transition={{ duration: 0.4 }}
               src={image}
               alt={title}
-              className="max-h-full max-w-full object-contain"
+              className="max-h-full rounded-[12px] max-w-full object-contain"
             />
           ) : (
             children

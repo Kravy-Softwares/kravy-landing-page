@@ -31,7 +31,7 @@ export default function FeaturesGrid() {
           <LoaderCircle className="h-12 w-12 animate-spin" />
         </div>
       ) : isError ? (
-        <div className="flex min-h-[250px] items-center justify-center rounded-3xl border border-destructive/20 bg-destructive/5 p-8 text-center">
+        <div className="flex min-h-[250px] items-center justify-center rounded-3xl border border-destructive/20 bg-destructive/5 text-center">
           <div>
             <h3 className="text-lg font-semibold">Failed to load features</h3>
             <p className="mt-2 text-sm text-muted-foreground">
