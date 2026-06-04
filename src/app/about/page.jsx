@@ -1,18 +1,9 @@
-// 
-
+//
 
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  CheckCircle2,
-  Store,
-  Users,
-  Cpu,
-  Sparkles,
-  ShieldCheck,
-  UserCircle2,
-} from "lucide-react";
+import { CheckCircle2, Store, Users, Cpu, Sparkles, ShieldCheck, UserCircle2 } from "lucide-react";
 
 const stats = [
   { label: "Shops & Restaurants Served", value: "500+" },
@@ -71,21 +62,24 @@ const techTeam = [
     name: "Vikash Verma",
     role: "Product Manager",
     image: "/assets/Vikash.jpeg",
-    description: "Spearheading product strategy and designing intuitive, fast-paced workflows for shop counters.",
+    description:
+      "Spearheading product strategy and designing intuitive, fast-paced workflows for shop counters.",
     techStack: "Product Strategy & UX",
   },
   {
     name: "Deepak",
     role: "App Developer",
     image: "/assets/Deepak.jpeg",
-    description: "Crafting lightweight, highly responsive mobile POS apps optimized for Android devices.",
+    description:
+      "Crafting lightweight, highly responsive mobile POS apps optimized for Android devices.",
     techStack: "React Native & Android",
   },
   {
     name: "Ramveer",
     role: "Software Developer",
     image: "/assets/Ramveer.jpg",
-    description: "Building resilient cloud infrastructures, offline-sync backends, and robust security protocols.",
+    description:
+      "Building resilient cloud infrastructures, offline-sync backends, and robust security protocols.",
     techStack: "Next.js & Node.js",
   },
 ];
@@ -102,13 +96,9 @@ export default function AboutPage() {
     <main className="min-h-screen bg-slate-50 dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 text-slate-900 dark:text-slate-100">
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 md:px-6 pt-10 md:pt-14 pb-16">
-
         {/* Breadcrumb */}
         <div className="mb-4 text-xs md:text-sm text-slate-500 dark:text-slate-400">
-          <a
-            href="/"
-            className="hover:text-emerald-600 dark:hover:text-emerald-400"
-          >
+          <a href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400">
             Home
           </a>
           <span className="mx-1">/</span>
@@ -144,10 +134,9 @@ export default function AboutPage() {
               transition={{ delay: 0.1 }}
               className="text-sm md:text-base text-slate-700 dark:text-slate-300 max-w-xl mb-6"
             >
-              Kravy was born from a simple observation: most billing systems are
-              built for offices, not for fast-moving kirana stores, cafés, and
-              restaurants. We’re here to change that. Our mission is to bring
-              powerful yet simple billing to every counter in India.
+              Kravy was born from a simple observation: most billing systems are built for offices,
+              not for fast-moving kirana stores, cafés, and restaurants. We’re here to change that.
+              Our mission is to bring powerful yet simple billing to every counter in India.
             </motion.p>
 
             <motion.div
@@ -156,7 +145,6 @@ export default function AboutPage() {
               transition={{ delay: 0.15 }}
               className="flex flex-wrap gap-3 items-center"
             >
-
               <a
                 href="https://www.kravy.in/contact"
                 target="_blank"
@@ -191,10 +179,9 @@ export default function AboutPage() {
               </div>
 
               <p className="text-xs md:text-sm text-slate-700 dark:text-slate-300 mb-4">
-                Kravy is built for teams who stand behind the counter all day – not
-                for people sitting in cabins. That’s why our screens are minimal, our
-                flows are fast, and our interface is tuned for high-volume use cases and
-                rush hours.
+                Kravy is built for teams who stand behind the counter all day – not for people
+                sitting in cabins. That’s why our screens are minimal, our flows are fast, and our
+                interface is tuned for high-volume use cases and rush hours.
               </p>
 
               <div className="grid grid-cols-3 gap-3 mt-3">
@@ -269,24 +256,21 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission (Goals & Vision anchor) */}
-      <section
-        id="goals"
-        className="max-w-6xl mx-auto px-4 md:px-6 pb-14 scroll-mt-24"
-      >
+      <section id="goals" className="max-w-6xl mx-auto px-4 md:px-6 pb-14 scroll-mt-24">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-7 shadow-sm dark:border-slate-700 dark:bg-slate-950/60">
             <h2 className="text-lg md:text-2xl font-bold mb-2">Our Vision</h2>
             <p className="text-sm md:text-base text-slate-700 dark:text-slate-300">
-              To become the most trusted billing partner for small and mid-sized
-              businesses in India by turning every bill into an opportunity to serve
-              better, grow faster, and make smarter decisions.
+              To become the most trusted billing partner for small and mid-sized businesses in India
+              by turning every bill into an opportunity to serve better, grow faster, and make
+              smarter decisions.
             </p>
           </div>
           <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-7 shadow-sm dark:border-slate-700 dark:bg-slate-950/60">
             <h2 className="text-lg md:text-2xl font-bold mb-2">Our Mission</h2>
             <p className="text-sm md:text-base text-slate-700 dark:text-slate-300">
-              To remove billing pain from shopkeepers’ lives by combining intuitive software and fast support – at a price point that
-              makes clear business sense.
+              To remove billing pain from shopkeepers’ lives by combining intuitive software and
+              fast support – at a price point that makes clear business sense.
             </p>
           </div>
         </div>
@@ -298,8 +282,8 @@ export default function AboutPage() {
           <div>
             <h2 className="text-lg md:text-2xl font-bold">Our Core Values</h2>
             <p className="text-xs md:text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-xl">
-              These values guide how we design features, talk to customers, and decide
-              what to build next.
+              These values guide how we design features, talk to customers, and decide what to build
+              next.
             </p>
           </div>
         </div>
@@ -312,10 +296,7 @@ export default function AboutPage() {
             >
               <div className="mt-1">
                 <div className="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center dark:bg-emerald-500/15">
-                  <CheckCircle2
-                    size={16}
-                    className="text-emerald-600 dark:text-emerald-400"
-                  />
+                  <CheckCircle2 size={16} className="text-emerald-600 dark:text-emerald-400" />
                 </div>
               </div>
               <div>
@@ -337,9 +318,9 @@ export default function AboutPage() {
               Why do growing shops choose Kravy?
             </h2>
             <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 mb-4 max-w-xl">
-              There are many billing tools out there. Shopkeepers stay with Kravy
-              because we focus on the three things that matter the most: speed at the
-              counter, accuracy in reports, and support when it’s needed.
+              There are many billing tools out there. Shopkeepers stay with Kravy because we focus
+              on the three things that matter the most: speed at the counter, accuracy in reports,
+              and support when it’s needed.
             </p>
 
             <ul className="space-y-2.5 mt-3">
@@ -368,39 +349,35 @@ export default function AboutPage() {
                 <span className="font-semibold text-slate-900 dark:text-slate-100">
                   2023 – Idea to Prototype:
                 </span>{" "}
-                Started as an internal tool to fix messy billing at a small cloud
-                kitchen and retail outlet.
+                Started as an internal tool to fix messy billing at a small cloud kitchen and retail
+                outlet.
               </p>
               <p>
                 <span className="font-semibold text-slate-900 dark:text-slate-100">
                   2024 – Early Adopters:
                 </span>{" "}
-                Onboarded our first set of shopkeepers who shaped our fastest billing
-                flows and must-have reports.
+                Onboarded our first set of shopkeepers who shaped our fastest billing flows and
+                must-have reports.
               </p>
               <p>
                 <span className="font-semibold text-slate-900 dark:text-slate-100">
                   Now – Growing Together:
                 </span>{" "}
-                We’re refining Kravy with every new counter we serve, focusing on
-                stability, speed, and features that actually get used in day-to-day
-                business.
+                We’re refining Kravy with every new counter we serve, focusing on stability, speed,
+                and features that actually get used in day-to-day business.
               </p>
             </div>
 
             <div className="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-500 dark:border-slate-800 dark:text-slate-400">
-              Kravy is still evolving. If you’re a shop or restaurant owner, your
-              feedback won’t just be “noted” – it will directly shape future releases.
+              Kravy is still evolving. If you’re a shop or restaurant owner, your feedback won’t
+              just be “noted” – it will directly shape future releases.
             </div>
           </div>
         </div>
       </section>
 
       {/* Founder's Note */}
-      <section
-        id="founder"
-        className="max-w-6xl mx-auto px-4 md:px-6 pb-20 scroll-mt-28"
-      >
+      <section id="founder" className="max-w-6xl mx-auto px-4 md:px-6 pb-20 scroll-mt-28">
         <div className="relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-md dark:border-slate-700 dark:bg-slate-950/70">
           {/* Subtle background glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-slate-50 dark:from-emerald-950/20 dark:via-slate-950 dark:to-slate-950 pointer-events-none" />
@@ -422,7 +399,9 @@ export default function AboutPage() {
               </div>
               <div className="mt-3 text-center">
                 <p className="text-xs font-bold text-slate-800 dark:text-slate-100">Akash Verma</p>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Founder, Kravy Software Development</p>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">
+                  Founder, Kravy Software Development
+                </p>
               </div>
             </motion.div>
 
@@ -434,31 +413,32 @@ export default function AboutPage() {
               className="flex-1"
             >
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200 text-[11px] uppercase tracking-[0.18em] dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/40 mb-4">
-                <Sparkles size={12} />
-                A Note from Our Founder
+                <Sparkles size={12} />A Note from Our Founder
               </span>
 
               <blockquote className="border-l-4 border-emerald-400 pl-4 dark:border-emerald-500">
                 <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-3">
-                  "When I started Kravy, the goal was simple — to build a billing tool that a shopkeeper
-                  in Delhi or a café owner in Bangalore could actually use without any training. Not something
-                  built for tech-savvy users in an air-conditioned office, but something built for the real
-                  hustle at the counter."
+                  "When I started Kravy, the goal was simple — to build a billing tool that a
+                  shopkeeper in Delhi or a café owner in Bangalore could actually use without any
+                  training. Not something built for tech-savvy users in an air-conditioned office,
+                  but something built for the real hustle at the counter."
                 </p>
                 <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-3">
-                  "Every feature we ship comes from real conversations with real shop owners. If it doesn't
-                  make their day easier, we don't build it. And if something breaks, we fix it before they
-                  even finish their chai."
+                  "Every feature we ship comes from real conversations with real shop owners. If it
+                  doesn't make their day easier, we don't build it. And if something breaks, we fix
+                  it before they even finish their chai."
                 </p>
                 <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
-                  "Kravy is still a work in progress — and that's exactly how we like it. We grow with our
-                  customers, one bill at a time."
+                  "Kravy is still a work in progress — and that's exactly how we like it. We grow
+                  with our customers, one bill at a time."
                 </p>
               </blockquote>
 
               <div className="mt-5 flex items-center gap-3">
                 <div className="h-px flex-1 bg-slate-200 dark:bg-slate-700" />
-                <span className="text-[11px] text-slate-500 dark:text-slate-400 italic">— Akash Verma, Founder at Kravy</span>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 italic">
+                  — Akash Verma, Founder at Kravy
+                </span>
               </div>
             </motion.div>
           </div>
@@ -471,7 +451,8 @@ export default function AboutPage() {
           <div>
             <h2 className="text-lg md:text-2xl font-bold">Meet our Tech & Product Builders</h2>
             <p className="text-xs md:text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-xl">
-              The engineers and product minds crafting the future of billing technology for Indian retail.
+              The engineers and product minds crafting the future of billing technology for Indian
+              retail.
             </p>
           </div>
         </div>
@@ -493,9 +474,7 @@ export default function AboutPage() {
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-xs font-semibold text-emerald-400">
-                    {member.techStack}
-                  </span>
+                  <span className="text-xs font-semibold text-emerald-400">{member.techStack}</span>
                 </div>
               </div>
               <div className="p-5">
@@ -510,9 +489,7 @@ export default function AboutPage() {
                 <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mb-2">
                   {member.role}
                 </p>
-                <p className="text-xs text-slate-600 dark:text-slate-300">
-                  {member.description}
-                </p>
+                <p className="text-xs text-slate-600 dark:text-slate-300">{member.description}</p>
               </div>
             </motion.div>
           ))}
@@ -520,15 +497,13 @@ export default function AboutPage() {
       </section>
 
       {/* Meet the Team (Our Team anchor) */}
-      <section
-        className="max-w-6xl mx-auto px-4 md:px-6 pb-20"
-      >
+      <section className="max-w-6xl mx-auto px-4 md:px-6 pb-20">
         <div className="flex items-center justify-between gap-4 mb-6">
           <div>
             <h2 className="text-lg md:text-2xl font-bold">The team behind Kravy</h2>
             <p className="text-xs md:text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-xl">
-              A small team working closely with shopkeepers and restaurant owners to
-              refine Kravy with every release.
+              A small team working closely with shopkeepers and restaurant owners to refine Kravy
+              with every release.
             </p>
           </div>
         </div>
@@ -541,18 +516,13 @@ export default function AboutPage() {
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center dark:bg-emerald-500/15">
-                  <UserCircle2
-                    size={22}
-                    className="text-emerald-700 dark:text-emerald-300"
-                  />
+                  <UserCircle2 size={22} className="text-emerald-700 dark:text-emerald-300" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                     {member.name}
                   </p>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400">
-                    {member.focus}
-                  </p>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">{member.focus}</p>
                 </div>
               </div>
               <p className="text-xs md:text-sm text-slate-700 dark:text-slate-300 mt-2">
@@ -575,14 +545,12 @@ export default function AboutPage() {
       </section>
 
       {/* Pricing / Plan Section */}
-      <section
-        id="pricing"
-        className="max-w-6xl mx-auto px-4 md:px-6 pb-20 scroll-mt-28"
-      >
+      <section id="pricing" className="max-w-6xl mx-auto px-4 md:px-6 pb-20 scroll-mt-28">
         <div className="rounded-3xl border border-emerald-200 bg-emerald-50/50 p-6 md:p-10 text-center dark:border-emerald-500/30 dark:bg-emerald-500/5">
           <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Choose Your Perfect Plan</h2>
           <p className="text-sm md:text-lg text-slate-700 dark:text-slate-300 max-w-2xl mx-auto mb-6">
-            Simple, scalable pricing crafted for every food business — from cloud kitchens to fine dining.
+            Simple, scalable pricing crafted for every food business — from cloud kitchens to fine
+            dining.
           </p>
           <a
             href="/pricing"
@@ -595,7 +563,6 @@ export default function AboutPage() {
     </main>
   );
 }
-
 
 /* Reusable card block */
 function CardBlock({ icon, title, text }) {

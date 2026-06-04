@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, MapPin, Headset } from "lucide-react";
+import { Phone, MapPin, Headset } from "lucide-react";
 import Template from "@/components/global/template";
 import { COMPANY } from "@/constants";
 
@@ -43,9 +43,8 @@ const cardData = [
     icon: <Headset className="w-6 h-6 text-green-500" />,
     content: (
       <>
-        Whether you need assistance setting up your Kravy billing system,
-        configuring your account, or managing your subscription, our
-        support team is here for you.
+        Whether you need assistance setting up your Kravy billing system, configuring your account,
+        or managing your subscription, our support team is here for you.
         <br />
         <br />
         Reach out via email at{" "}
@@ -55,8 +54,7 @@ const cardData = [
         >
           {COMPANY.EMAIL.SUPPORT}
         </a>{" "}
-        — we typically respond within 24 hours during working hours (
-        {COMPANY.WORKING_HOURS}).
+        — we typically respond within 24 hours during working hours ({COMPANY.WORKING_HOURS}).
       </>
     ),
   },
@@ -88,8 +86,8 @@ const cardData = [
         {COMPANY.ADDRESS}
         <br />
         <br />
-        Please contact us before scheduling a visit — we primarily operate
-        remotely for faster service.
+        Please contact us before scheduling a visit — we primarily operate remotely for faster
+        service.
       </>
     ),
   },
@@ -102,9 +100,8 @@ const contactData = {
   content: (
     <div>
       <p className="mb-4">
-        Whether you're setting up a new Kravy billing system or need help with
-        your existing account, we’re happy to assist. Our support covers both
-        billing and account troubleshooting.
+        Whether you're setting up a new Kravy billing system or need help with your existing
+        account, we’re happy to assist. Our support covers both billing and account troubleshooting.
       </p>
       <p>
         Email Support:{" "}
@@ -143,8 +140,7 @@ const page = () => {
       title="Contact Us"
       heading={
         <div>
-          Get in Touch <br className="hidden sm:block" /> with {COMPANY.NAME}{" "}
-          Support
+          Get in Touch <br className="hidden sm:block" /> with {COMPANY.NAME} Support
         </div>
       }
       description={`Need help with your ${COMPANY.NAME} billing software, account setup, or subscription? Contact our team for support and assistance.`}

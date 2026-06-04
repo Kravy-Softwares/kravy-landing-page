@@ -43,7 +43,10 @@ const SITEMAP_INFO = [
     content: (
       <ul className="space-y-2 mt-2">
         <li>
-          <Link href="/" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Home Page
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
@@ -51,7 +54,10 @@ const SITEMAP_INFO = [
           </span>
         </li>
         <li>
-          <Link href="/about" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/about"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             About Us
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
@@ -59,15 +65,22 @@ const SITEMAP_INFO = [
           </span>
         </li>
         <li>
-          <Link href="/pricing" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/pricing"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Pricing Plans
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
-            Affordable monthly and annual plans tailored for food trucks, cafes, and multi-outlet restaurants.
+            Affordable monthly and annual plans tailored for food trucks, cafes, and multi-outlet
+            restaurants.
           </span>
         </li>
         <li>
-          <Link href="/updates" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/updates"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Product Updates
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
@@ -83,23 +96,34 @@ const SITEMAP_INFO = [
     content: (
       <ul className="space-y-2 mt-2">
         <li>
-          <Link href="/faqs" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/faqs"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Frequently Asked Questions
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
-            Got questions about integrations, security, or custom hardware setup? Find answers instantly.
+            Got questions about integrations, security, or custom hardware setup? Find answers
+            instantly.
           </span>
         </li>
         <li>
-          <Link href="/contact" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/contact"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Contact Support
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
-            Get in touch with our product experts, customer service, or request a custom billing consultation.
+            Get in touch with our product experts, customer service, or request a custom billing
+            consultation.
           </span>
         </li>
         <li>
-          <Link href="/report-issue" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/report-issue"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Report an Issue
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
@@ -115,7 +139,10 @@ const SITEMAP_INFO = [
     content: (
       <ul className="space-y-2 mt-2">
         <li>
-          <Link href="/privacy-policy" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/privacy-policy"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Privacy Policy
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
@@ -123,7 +150,10 @@ const SITEMAP_INFO = [
           </span>
         </li>
         <li>
-          <Link href="/terms-and-conditions" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/terms-and-conditions"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Terms of Service
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
@@ -131,19 +161,27 @@ const SITEMAP_INFO = [
           </span>
         </li>
         <li>
-          <Link href="/cancellation-and-refund-policy" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/cancellation-and-refund-policy"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Refund & Cancellation Policy
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
-            Information about subscription cancellations, automatic renewals, and refund eligibility.
+            Information about subscription cancellations, automatic renewals, and refund
+            eligibility.
           </span>
         </li>
         <li>
-          <Link href="/delete-account" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/delete-account"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Delete Account
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
-            Request the closure of your Kravy account and deletion of your personal and business data.
+            Request the closure of your Kravy account and deletion of your personal and business
+            data.
           </span>
         </li>
       </ul>
@@ -155,15 +193,22 @@ const SITEMAP_INFO = [
     content: (
       <ul className="space-y-2 mt-2">
         <li>
-          <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/blog"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Official Blog
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
-            Tips on maximizing restaurant sales, running a retail outlet, and leveraging modern POS technology.
+            Tips on maximizing restaurant sales, running a retail outlet, and leveraging modern POS
+            technology.
           </span>
         </li>
         <li>
-          <Link href="/orders" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm">
+          <Link
+            href="/orders"
+            className="text-blue-600 dark:text-blue-400 hover:underline font-semibold text-sm"
+          >
             Track Orders
           </Link>
           <span className="text-xs text-neutral-500 dark:text-neutral-400 block">
@@ -182,7 +227,8 @@ const SITEMAP_CONTACT = {
   content: (
     <div>
       <p className="mb-4">
-        Our customer support representatives are available 24/7 to guide you through the platform or help you get a custom setup.
+        Our customer support representatives are available 24/7 to guide you through the platform or
+        help you get a custom setup.
       </p>
       <p>
         Email Support:{" "}

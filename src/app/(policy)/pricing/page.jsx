@@ -3,37 +3,37 @@ import React from "react";
 import { COMPANY } from "@/constants";
 
 export const metadata = {
-  title: `Pricing - ${COMPANY.name}`,
-  description: `Explore ${COMPANY.name} pricing plans for our smart billing software designed to help businesses manage invoices, orders, and payments easily.`,
+  title: `Pricing - ${COMPANY.NAME}`,
+  description: `Explore ${COMPANY.NAME} pricing plans for our smart billing software designed to help businesses manage invoices, orders, and payments easily.`,
   keywords: [
-    `${COMPANY.name} pricing`,
+    `${COMPANY.NAME} pricing`,
     "billing software pricing",
     "invoice management software",
     "POS billing system",
     "business billing solution",
   ],
-  authors: [{ name: `${COMPANY.name} Team`, email: COMPANY.email }],
+  authors: [{ name: `${COMPANY.NAME} Team`, email: COMPANY.EMAIL }],
   robots: "index, follow",
 
   openGraph: {
-    title: `Pricing - ${COMPANY.name}`,
-    description: `Discover affordable billing software plans at ${COMPANY.name} to manage invoices, orders, and payments efficiently.`,
-    url: `${COMPANY.url}/pricing`,
+    title: `Pricing - ${COMPANY.NAME}`,
+    description: `Discover affordable billing software plans at ${COMPANY.NAME} to manage invoices, orders, and payments efficiently.`,
+    url: `${COMPANY.DOMAIN}/pricing`,
     type: "website",
     images: [
       {
-        url: `${COMPANY.url}/logo.png`,
+        url: `${COMPANY.DOMAIN}/logo.png`,
         width: 1200,
         height: 630,
-        alt: `${COMPANY.name} Logo`,
+        alt: `${COMPANY.NAME} Logo`,
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: `Pricing - ${COMPANY.name}`,
-    description: `Check pricing plans for ${COMPANY.name} billing software and simplify your business billing process.`,
+    title: `Pricing - ${COMPANY.NAME}`,
+    description: `Check pricing plans for ${COMPANY.NAME} billing software and simplify your business billing process.`,
   },
 };
 
