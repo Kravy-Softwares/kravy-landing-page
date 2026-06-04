@@ -23,35 +23,6 @@ export default function FeatureCard({ title, description, image, badge, children
         <div className="absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-emerald-500/10 blur-3xl" />
       </div>
 
-      <div className="relative z-10 p-7">
-        {badge && (
-          <div className="mb-4 inline-flex items-center rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-[11px] font-semibold text-zinc-600">
-            {badge}
-          </div>
-        )}
-
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h3 className="text-xl font-bold tracking-tight text-zinc-900">{title}</h3>
-
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">{description}</p>
-          </div>
-
-          <div
-            className="
-              flex h-10 w-10 items-center justify-center
-              rounded-xl border border-zinc-200
-              bg-white
-              transition-all
-              duration-300
-              group-hover:rotate-45
-            "
-          >
-            <ArrowUpRight className="h-4 w-4 text-zinc-600" />
-          </div>
-        </div>
-      </div>
-
       <div className="relative z-10 px-4 pb-4">
         <div
           className="
@@ -81,6 +52,21 @@ export default function FeatureCard({ title, description, image, badge, children
           )}
         </div>
       </div>
+      <div className="relative z-10 p-7">
+        {badge && (
+          <div className="mb-4 inline-flex items-center rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-[11px] font-semibold text-zinc-600">
+            {badge}
+          </div>
+        )}
+
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h3 className="text-xl font-bold tracking-tight text-zinc-900">{title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-500">{description}</p>
+          </div>
+        </div>
+      </div>
+
     </motion.div>
   );
 }

@@ -4,7 +4,6 @@ import React from "react";
 import Testimonials from "./Reviews";
 import AppDownload from "./AppDownload";
 import FeaturesGrid from "@/components/global/Home/Feature";
-import PricingSection from "@/components/global/Home/Pricing";
 
 export default function Home() {
   return (
@@ -12,7 +11,6 @@ export default function Home() {
       <Hero />
       <FeaturesGrid />
       <Testimonials />
-      <PricingSection />
       <AppDownload />
     </div>
   );

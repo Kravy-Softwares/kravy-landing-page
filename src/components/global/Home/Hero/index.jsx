@@ -77,42 +77,42 @@ export default function Hero() {
               icon="🧾"
               label="Print Bills"
               delay={0}
-              className="left-0 top-[15%] flex"
+              className="left-0 top-[15%] hidden md:flex"
             />
 
             <FloatingTag
               icon="📱"
               label="QR Ordering"
               delay={0.2}
-              className="right-0 top-[18%] flex"
+              className="right-0 top-[18%] hidden md:flex"
             />
 
             <FloatingTag
               icon="🍽️"
               label="Floor Management"
               delay={0.4}
-              className="left-0 bottom-[30%] flex"
+              className="left-0 bottom-[30%] hidden md:flex"
             />
 
             <FloatingTag
               icon="💬"
               label="WhatsApp Marketing"
               delay={0.6}
-              className="right-0 bottom-[30%] flex"
+              className="right-0 bottom-[30%] hidden md:flex"
             />
 
             <FloatingTag
               icon="🖨️"
               label="Bluetooth Printer"
               delay={0.8}
-              className="left-[8%] bottom-[8%] flex"
+              className="left-[8%] bottom-[8%] hidden md:flex"
             />
 
             <FloatingTag
               icon="📊"
               label="Analytics"
               delay={1}
-              className="right-[8%] bottom-[8%] flex"
+              className="right-[8%] bottom-[8%] hidden md:flex"
             />
 
             <Image

@@ -19,12 +19,10 @@ export default function FeaturesGrid() {
     staleTime: 1000 * 60 * 5,
   });
 
-  console.log("Features data:", features);
-
   return (
     <SectionWrapper
       title="Everything your Restaurant needs"
-      description="Manage orders, payments, customer engagement and analytics from one powerful platform."
+      description="Manage orders, payments, customer engagement and analytics"
     >
       {isPending ? (
         <div className="flex items-center justify-center p-8">

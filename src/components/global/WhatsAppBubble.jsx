@@ -2,16 +2,10 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppBubble = () => {
-  // ✅ Put your WhatsApp number here (without +)
-  const phoneNumber = "919289507882"; // example: 91 + your number
+  const phoneNumber = "919289507882";
+  const message = "Hi Kravy team, I want to know more about the billing software.";
 
-  // ✅ Optional: default message when user clicks
-  const message =
-    "Hi Kravy team, I want to know more about the billing software.";
-
-  const href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    message
-  )}`;
+  const href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
     <Link

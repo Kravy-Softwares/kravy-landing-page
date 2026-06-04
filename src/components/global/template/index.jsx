@@ -21,27 +21,27 @@ const Template = ({
   contactData,
   GradText = true,
 }) => {
-  const pageUrl = `https://kravy.in${ctaLink || ""}`;
+  const pageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${ctaLink || ""}`;
 
   return (
     <>
       <Head>
-        <title>{heading ? `${heading} | FoodSnap` : "FoodSnap"}</title>
+        <title>{heading ? `${heading} | Kravy` : "Kravy"}</title>
         <meta
           name="description"
           content={
             description ||
-            "FoodSnap - Smart restaurant menu processing and automation."
+            "Kravy provides a smart billing software solution built for restaurants and small businesses to manage sales, POS billing, and invoices."
           }
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={pageUrl} />
 
-        <meta property="og:title" content={heading || "FoodSnap"} />
+        <meta property="og:title" content={heading || "Kravy"} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://app.foodsnap.in/logo.png" />
+        <meta property="og:image" content={process.env.NEXT_PUBLIC_BASE_URL} />
 
         <script
           type="application/ld+json"
@@ -49,7 +49,7 @@ const Template = ({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebPage",
-              name: typeof heading === "string" ? heading : "FoodSnap",
+              name: typeof heading === "string" ? heading : "Kravy",
               url: pageUrl,
               description: typeof description === "string" ? description : "",
               inLanguage: "en",
