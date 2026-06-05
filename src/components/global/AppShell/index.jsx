@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import { usePathname } from "next/navigation";
@@ -8,18 +9,21 @@ export default function AppShell({ children }) {
   const pathname = usePathname();
   const isBridge = pathname === "/bridge";
 
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            retry: 1,
+            refetchOnWindowFocus: false,
+          },
+        },
+      })
+  );
+
   if (isBridge) {
     return <div className="min-h-screen">{children}</div>;
   }
-
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: 1,
-        refetchOnWindowFocus: false,
-      },
-    },
-  });
 
   return (
     <QueryClientProvider client={queryClient}>

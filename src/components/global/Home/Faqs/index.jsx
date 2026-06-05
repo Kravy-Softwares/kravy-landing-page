@@ -84,8 +84,8 @@ export default function Faqs() {
               <button
                 onClick={() => toggle(i)}
                 className={`w-full flex items-center justify-between px-5 py-4 text-left font-medium text-md md:text-lg transition-all duration-300 ${isOpen
-                    ? "bg-indigo-100 dark:bg-[#1a183b]/60"
-                    : "hover:bg-indigo-50 dark:hover:bg-[#16142f]/40"
+                  ? "bg-indigo-100 dark:bg-[#1a183b]/60"
+                  : "hover:bg-indigo-50 dark:hover:bg-[#16142f]/40"
                   }`}
               >
                 <div className="flex items-center gap-3">
