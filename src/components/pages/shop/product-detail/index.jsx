@@ -1,14 +1,43 @@
 "use client"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ShoppingCart, Zap } from "lucide-react"
-import { StarRating } from "@/components/global/general/star-rating"
-import { TrustBadges } from "@/components/global/general/trust-badges"
-import { ProductGallery } from "@/components/global/general/product-gallery"
-import { QuantitySelector } from "@/components/global/general/quantity-selector"
+import { Zap } from "lucide-react"
+import { formatPrice } from "@/lib/utils"
+import { useState, useEffect } from "react"
+import { useCart } from "@/store/hooks/useCart"
+import { StarRating } from "@/components/general/star-rating"
+import AddToCartButton from "@/components/general/cart/add-to-cart-button"
+import { TrustBadges } from "@/components/pages/shop/product-detail/fragments/trust-badges"
+import { ProductGallery } from "@/components/pages/shop/product-detail/fragments/product-gallery"
+import { ProductAccordion } from "@/components/pages/shop/product-detail/fragments/product-accordion"
+import { QuantitySelector } from "@/components/pages/shop/product-detail/fragments/quantity-selector"
 
 const ProductDetails = ({ product = {} }) => {
-    const [quantity, setQuantity] = useState()
+    const { items, updateQuantity } = useCart()
+    const isInCart = items.some(item => item._id === (product?._id || product?.slug))
+
+    const [quantity, setQuantity] = useState(product?.quantity || 1)
+
+    useEffect(() => {
+        if (product?.quantity !== undefined) {
+            setQuantity(product.quantity)
+        }
+    }, [product?.quantity])
+
+    const totalPrice = (product?.price || 0) * quantity
+    const cartProduct = {
+        _id: product?._id || product?.slug,
+        slug: product?.slug,
+        name: product?.name,
+        image: product?.images?.[0] || "",
+        price: product?.price || 0,
+        originalPrice: product?.originalPrice || product?.price || 0,
+        stock: product?.stock || product?.maxQty || 999,
+        quantity: quantity
+    }
+
+    const handleBuyNow = () => {
+        window.dispatchEvent(new CustomEvent("open-cart"))
+    }
+
     return (
         <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white/40 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl w-full mx-auto">
@@ -34,26 +63,20 @@ const ProductDetails = ({ product = {} }) => {
                                     {product?.rating}
                                 </span>
                                 <span className="text-xs text-zinc-400">
-                                    {product?.reviewCount.toLocaleString()} reviews
+                                    {product?.reviewCount?.toLocaleString()} reviews
                                 </span>
                             </div>
 
                             <div className="flex items-baseline gap-3.5 p-4 bg-gradient-to-r from-indigo-50/70 to-indigo-50/10 border border-indigo-50/50 rounded-2xl">
                                 <span className="text-3xl font-black text-zinc-900">
-                                    {new Intl.NumberFormat("en-IN", {
-                                        style: "currency",
-                                        currency: "INR",
-                                        maximumFractionDigits: 0,
-                                    }).format(product?.price || 0)}
+                                    {formatPrice(product?.price)}
                                 </span>
 
-                                <span className="text-sm text-zinc-400 line-through">
-                                    {new Intl.NumberFormat("en-IN", {
-                                        style: "currency",
-                                        currency: "INR",
-                                        maximumFractionDigits: 0,
-                                    }).format(product?.originalPrice || 0)}
-                                </span>
+                                {product?.originalPrice && product.originalPrice > product.price && (
+                                    <span className="text-sm text-zinc-400 line-through">
+                                        {formatPrice(product?.originalPrice)}
+                                    </span>
+                                )}
 
                                 {product?.discount && (
                                     <span className="text-[10px] font-bold bg-red-500 text-white px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm shadow-red-100">
@@ -73,45 +96,50 @@ const ProductDetails = ({ product = {} }) => {
                                     <span className="text-[10px] font-bold tracking-wider text-zinc-400 uppercase block">
                                         Quantity
                                     </span>
-                                    {/* <QuantitySelector value={quantity} onChange={setQuantity} max={product?.maxQty} /> */}
+                                    <QuantitySelector
+                                        value={quantity}
+                                        onChange={(newQty) => {
+                                            setQuantity(newQty)
+                                            if (isInCart) {
+                                                updateQuantity(product?._id || product?.slug, newQty)
+                                            }
+                                        }}
+                                        max={product?.maxQty}
+                                    />
                                 </div>
 
                                 {quantity > 1 && (
                                     <div className="text-xs text-zinc-400 mb-1">
-                                        Total: <span className="text-zinc-800 font-bold text-sm">${totalPrice}</span>
+                                        Total: <span className="text-zinc-800 font-bold text-sm">{formatPrice(totalPrice)}</span>
                                     </div>
                                 )}
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                                <Button
-                                    className="flex-1 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-xs gap-2 shadow-md shadow-indigo-100 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
-                                // onClick={handleBuyNow}
+                                <button
+                                    onClick={handleBuyNow}
+                                    className="flex flex-1 items-center justify-center gap-2 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-xs shadow-md shadow-indigo-100 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
                                 >
                                     <Zap size={14} />
                                     Buy Now
-                                </Button>
+                                </button>
 
-                                <Button
-                                    variant="outline"
-                                    className="flex-1 h-12 rounded-xl border-zinc-200 font-bold text-xs gap-2 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50/50 transition-all duration-200"
-                                // onClick={handleAddToCart}
-                                >
-                                    <ShoppingCart size={14} />
-                                    Add to Cart
-                                </Button>
+                                <AddToCartButton
+                                    product={cartProduct}
+                                    quantity={quantity}
+                                />
                             </div>
 
                             <div className="h-px bg-zinc-100" />
 
-                            <TrustBadges />
+                            <TrustBadges badges={product?.badges} />
 
-                            {/* <ProductAccordion
+                            <ProductAccordion
                                 details={product?.features}
                                 shipping={product?.shipping}
                                 sustainability={product?.sustainability}
                                 tags={product?.tags}
-                            /> */}
+                            />
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,15 @@
 "use client";
 import { useParams } from "next/navigation";
-import Loading from "@/components/general/loader";
+import { useCart } from "@/store/hooks/useCart";
 import { useProduct } from "@/store/hooks/useProducts";
-import ErrorState from "@/components/general/error-state";
+import Loading from "@/components/general/states/loader";
+import ErrorState from "@/components/general/states/error-state";
 import ProductDetails from "@/components/pages/shop/product-detail";
 
 const Page = () => {
   const { slug } = useParams();
   const { data: product, isLoading, isError } = useProduct(slug);
+  const { items } = useCart();
 
   if (isLoading) {
     return (
@@ -24,9 +26,18 @@ const Page = () => {
     );
   }
 
+  const cartItem = items.find(
+    (item) => item.slug === product.slug
+  );
+
+  const productWithQuantity = {
+    ...product,
+    quantity: cartItem?.quantity || 1,
+  };
+
   return (
     <div>
-      <ProductDetails product={product} />
+      <ProductDetails product={productWithQuantity} />
     </div>
   );
 

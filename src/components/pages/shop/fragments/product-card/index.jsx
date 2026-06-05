@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { formatPrice } from "@/lib/utils"
 import { Star, ArrowRight } from "lucide-react"
 
 const ProductCard = ({ product = {} }) => {
@@ -43,12 +44,12 @@ const ProductCard = ({ product = {} }) => {
                 <div className="mt-auto flex items-center justify-between pt-2 border-t border-zinc-50">
                     <div className="flex items-baseline gap-2">
                         <span className="text-xl font-black text-zinc-900">
-                            ₹{Number(product?.price).toLocaleString("en-IN")}
+                            {formatPrice(product?.price)}
                         </span>
 
                         {product?.originalPrice && (
                             <span className="text-xs text-zinc-400 line-through">
-                                ₹{Number(product?.originalPrice).toLocaleString("en-IN")}
+                                {formatPrice(product?.originalPrice)}
                             </span>
                         )}
                     </div>

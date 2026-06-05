@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 
 export function ProductGallery({ images, discount }) {
   const [activeIndex, setActiveIndex] = useState(0);
